@@ -1,0 +1,159 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{graphicx}
+\begin{document}
+\title{\huge{Tutored Project}}
+\author{Claude Cugerone, Florian Delaplace}
+\maketitle
+\tableofcontents{}
+\newpage
+\part{INTRODUCTION}
+\medbreak
+The main objective of this project results in creating a software allowing texture synthesis by drawing. We rely on the paper of Michael Ashikhmin : Natural textures Synthesis to create also an algorithm which, by extracting some classes of an image, wil create a new image based on a source image and a scheme made up with these extracted classes. The aim is to create a software where users could add their algorithms and test them interactivly by drawing the nex texture they want. By extracting some color classes of a sample image, a set of color is created. The user has then the possibility to draw a new texture with the previous color obtained from the texture sample. Once the drawing is complete, this scheme will be the target of some algorithms in order to create a new texture as natural as possible.
+\medbreak
+\section{Something}
+\medbreak
+\subsection{Functionnal needs}
+\medbreak
+\textbf{Open a sample image} : Will allow to load a sample image and display it in the software. This functionnality will be set with a \textbf{Open file button}. The accepted image formats will be those taken in charge by the QImage function, which is integrated into the Qt library.
+\medbreak
+\textbf{Create a Quit button} : In order to close the software. A Quit Qt function already exists. It is the one we will use. 
+\medbreak
+\textbf{Extract the colors from the sample image} : Once the sample image loaded, we perform an estiation in order to extract some color classes from the image.
+\medbreak
+\textbf{Create the palette} : Regroups the color the user could use to draw the scheme. The palette is made up the classes extracted from the image. The user can choose one of these colors to draw.
+\medbreak
+\textbf{Create a window to draw schemes} : A window where the user will draw the schemes, useful forthe generation of the new synthesized texture.
+\medbreak
+\textbf{Draw schemes with the mouse} : The user is using colors extracted from the sample texture to fill the scheme. He will draw with the mouse, will have the possibility to select different brushes, in order to make small or big shapes. The tablet drawing won't be taken into account.
+\medbreak
+\textbf{Implementation of Ashikhmin algorithm} : We will first code this algorithm which will construct a new textured image based on the previous sample texture and the scheme image. The final image would have the shape of the scheme image created by the user but with the intensity values we find into the sample texture. The intensities will be differenciated by the class type used to draw.
+\medbreak
+\textbf{Implementation of our method} : Our method is strongly inspired by the Ashikgmin algorithm.
+\medbreak
+\textbf{Create a ComboBox} : To choose which algorithm will run on the scheme. The Gui will change according to the summoned algorithm, to set the parameters of these methods.  
+\medbreak
+\textbf{Save a finale textured image} : Once the algorithm generated a final texture, the image can be saved. A button will set this functionnality.
+\medbreak
+\subsection{Non Functionnal needs}
+\medbreak
+\textbf{Evolutive} : This software would be implemented as if other persons would test their algorithms with it. The code would be commented and well coded to add new methods, to call functions implemented by a new user.
+\medbreak
+\textbf{Working on Windows} : 
+\medbreak
+\subsection{Tasks + Time assignment}
+\subsubsection{\textbf{Open a sample image}}
+\begin{itemize}
+	\item Create a button to call an event 'open file'.(1)
+	      \begin{itemize}
+	      	\item Time assignment : \textbf{1h}.
+	      \end{itemize}
+	\item Implement a method to display the image.(2)
+	      \begin{itemize}
+	      	\item Time assignment : \textbf{1h}.
+	      \end{itemize}
+\end{itemize}
+\medbreak
+\subsubsection{\textbf{Create a Quit button}}
+\begin{itemize}
+	\item Call the specified 'Quit' function of Qt library.(3)
+	      \begin{itemize}
+	      	\item Time assignment : \textbf{1h}.
+	      \end{itemize}
+\end{itemize}
+\medbreak
+\subsubsection{\textbf{Extract the colors from the sample image}}
+\begin{itemize}
+\item Implement the K-mean estimation algorithm to extract different classes from the sample image.(4)
+	      \begin{itemize}
+	      	\item Time assignment : \textbf{4h}.
+	      \end{itemize}
+\end{itemize}
+\medbreak
+\subsubsection{\textbf{Create the palette}}
+\begin{itemize}
+	\item Get the classes extracted from the image by the K-mean estimation.(5)
+	      \begin{itemize}
+	      	\item Time assignment :\textbf{2h}.
+	      \end{itemize}
+        \item Create the widgets in the Gui, allowing the user to select with which color he wil draw.(6)
+	      \begin{itemize}
+	      	\item Time assignment :\textbf{2h}.
+	      \end{itemize}
+\end{itemize}
+\medbreak
+\subsubsection{\textbf{Create a window to draw schemes}}
+\begin{itemize}
+	\item Set the widget openGL to display and update drawing.(7)
+	      \begin{itemize}
+	      	\item Time assignment :\textbf{2h}.
+	      \end{itemize}
+        \item Create a class to deal with all the actions for the drawing display.(8)
+	      \begin{itemize}
+	      	\item Time assignment :\textbf{4h}.
+	      \end{itemize}
+\end{itemize}
+\medbreak
+\subsubsection{\textbf{Draw schemes with the mouse}}
+\begin{itemize}
+	\item Add methods to deal with the mouse in the openGL window.(9)
+	      \begin{itemize}
+	      	\item Time assignment :\textbf{4h}.
+	      \end{itemize}
+        \item Create the widgets to choose the size of the brush.(10)
+	      \begin{itemize}
+	      	\item Time assignment :\textbf{3h}.
+	      \end{itemize}
+\end{itemize}
+\medbreak
+\subsubsection{\textbf{Implementation of Ashikhmin algorithm}}
+\begin{itemize}
+	\item Implement the initialization of the new textured image.(11)
+	      \begin{itemize}
+	      	\item Time assignment :\textbf{2h}.
+	      \end{itemize}
+        \item Implement the candidate search.(12)
+	      \begin{itemize}
+	      	\item Time assignment :\textbf{2h}.
+	      \end{itemize}
+\end{itemize}
+\medbreak
+\subsubsection{\textbf{Implementation of our method}}
+\begin{itemize}
+	\item .(13)
+	      \begin{itemize}
+	      	\item Time assignment :\textbf{6h}.
+	      \end{itemize}
+\end{itemize}
+\medbreak
+\subsubsection{\textbf{Create a ComboBox}}
+\begin{itemize}
+	\item Create the comboBox widget to choose which algorithm will run.(14)
+	      \begin{itemize}
+	      	\item Time assignment :\textbf{1h}.
+	      \end{itemize}
+        \item Implement the modification of the parameters widgets.(15)
+	      \begin{itemize}
+	      	\item Time assignment :\textbf{4h}.
+	      \end{itemize}
+\end{itemize}
+\medbreak
+\subsubsection{\textbf{Save a finale textured image}}
+\begin{itemize}
+	\item Create a button to save the final image.(16)
+	      \begin{itemize}
+	      	\item Time assignment :\textbf{1h}.
+	      \end{itemize}
+        \item Extract the values from the final image and save them.(17)
+	      \begin{itemize}
+	      	\item Time assignment :\textbf{2h}.
+	      \end{itemize}  
+\end{itemize}
+\medbreak
+\subsection{Gantt chart}
+
+  \includegraphics[scale=0.6]{Gantt.png}
+
+\medbreak
+\end{document}
